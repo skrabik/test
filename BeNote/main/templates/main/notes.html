@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+
+{% if request.user.is_authenticated %}
+
+    {% if content %}
+        {% for i in content %}
+        <a href="{% url 'check_note' i.pk %}"><div class="note-block">
+            <h2 class="head-note">{{ i.title }}</h2>
+            <h4>{{ i.text }}</h4>
+        </div></a>
+        {% endfor %}
+    {% else %}
+        <div class="normal-text">Упс, похоже вы пока не добавили ни одной заметки(</div>
+        <a href="{% url 'newnote' %}"><button class="bbutton">Добавить заметку</button></a>
+    {% endif %}
+
+{% else %}
+
+    <div class="normal-text">Для просмотра и добавления заметок необходимо авторизироваться</div>
+
+{% endif %}
+
+{% endblock %}

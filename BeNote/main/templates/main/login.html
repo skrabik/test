@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'main/css/start-pages-styles.css' %}" >
+    <link rel="shortcut icon" href="{% static 'main/images/logo.ico' %}" type="image/x-icon"/>
+</head>
+
+<body>
+    <div class="up-empty-block"></div>
+    <div class="main">
+        <div class="empty-block"></div>
+            <div class="main-block">
+            <form id="log-reg-form" method="post">
+                {% csrf_token %}
+                <div class="helper">
+                {% for field in form %}
+                <div class="field"><label for="{{ field.auto_id }}">{{ field.label }}</label>{{ field }}</div>
+                {% endfor %}
+                </div>
+                <button type="submit" class="login-button">Войти</button>
+            </form>
+            <div class="start-footer">Ёще нет аккаунта - <a href="{% url 'registration' %}">Зарегистрироваться</a></div>
+            </div>
+        <div class="empty-block"></div>
+    </div>
+</body>
+
+</html>

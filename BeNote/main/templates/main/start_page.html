@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Привет!</title>
+    <link rel="stylesheet" href="{% static 'main/css/start-pages-styles.css' %}" >
+    <link rel="shortcut icon" href="{% static 'main/images/logo.ico' %}" type="image/x-icon"/>
+</head>
+<body>
+
+<div class="up-empty-block"></div>
+<div class="main">
+    <div class="empty-block"></div>
+
+    <div class="main-block">
+        <div><img id="main-logo" src="{% static 'main/images/main-logo.png' %}"></div>
+        <div id="start-text-div">Онлайн блокнот для заметок</div>
+        <div class="text-div">Уже есть аккаунт?</div>
+        <a href="{% url 'login' %}"><button class="start-button">Войти</button></a>
+        <div class="text-div">Ещё нет аккаунта?</div>
+        <a href="{% url 'registration' %}"><button class="start-button">Зарегистироваться</button></a>
+    </div>
+
+    <div class="empty-block"></div>
+</div>
+
+</body>
+</html>

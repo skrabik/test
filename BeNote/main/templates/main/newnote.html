@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div class="new-note-form">{{ form }}</div>
+
+        <button type="submit" class="bbutton">Добавить записку</button>
+    </form>
+{% else %}
+    <div class="normal-text">Для добавления новых заметок необходимо авторизироваться</div>
+{% endif %}
+
+{% endblock %}
+

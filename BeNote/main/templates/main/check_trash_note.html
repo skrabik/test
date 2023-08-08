@@ -1,0 +1,13 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<div class="check-note">
+    <h2>{{ note.title }}</h2>
+    <div class="body-check-note"><h3>{{ note.text }}</h3></div>
+    <div class="note-time"><h5>{{ note.last_time_update }}</h5></div>
+</div>
+
+    <a href="{% url 'delete_trash_note' note.id %}"><button type="submit" class="bbutton">Удалить навсегда</button></a>
+
+{% endblock %}

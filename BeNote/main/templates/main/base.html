@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ title }}</title>
+    <link rel="shortcut icon" href="{% static 'main/images/logo.ico' %}" type="image/x-icon"/>
+	<link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+    </head>
+
+    <body>
+        <div class="header">
+            <a href="{% url 'main' %}" ><img class='main-logo' src="{% static 'main/images/main-logo.png' %}"></a>
+            {% if request.user.is_authenticated %}
+            <div class="user-block">
+                <div id="user-block"><a href="{% url 'main' %}"><button class="rbutton">{{ user.username }}</button><a></a> | <a href="{% url 'logout' %}"><button class="rbutton">Выйти</button></a></div>
+            </div>
+            {% else %}
+            <div class="user-block">
+                <div id="user-block"><a href="{% url 'login' %}"><button class="rbutton">Войти</button></a> | <a href="{% url 'registration' %}"><button class="rbutton">Зарегистрироваться</button></a></div>
+            </div>
+            {% endif %}
+        </div>
+        <div class="clearfix">
+        <div class="notes">
+            <div class="inner-notes">
+                {% for p in menu %}
+                    <a href="{% url p.url %}"><button class="button"><h3><img class="Mlogo" src="{% static 'main/images/' %}{{ p.logo_url }}">    {{ p.title }}</h3></button></a>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="content">
+            <div class="inner-content">
+                {% block content %}
+                {% if request.user.is_authenticated %}
+                    {% if time == 'morning' %}
+                        <div class="normal-text">Доброе утро, {{ user.username }}!</div>
+                    {% elif time == 'day' %}
+                        <div class="normal-text">Добрый день, {{ user.username }}!</div>
+                    {% else %}
+                        <div class="normal-text">Добрый вечер, {{ user.username }}!</div>
+                    {% endif %}
+                {% else %}
+                    {% if time == 'morning' %}
+                        <div class="normal-text">Доброе утро!</div>
+                    {% elif time == 'day' %}
+                        <div class="normal-text">Добрый день!</div>
+                    {% else %}
+                        <div class="normal-text">Добрый вечер!</div>
+                    {% endif %}
+                {% endif %}
+
+                {% block button %}
+                {% endblock button %}
+
+                {% endblock content %}
+            </div>
+        </div>
+        </div>
+        <div class="footer">
+            <div class="inner-footer">Почта для связи и поддержки: <a href="mailto:babenk00r@yandex.ru">babenk00r@yandex.ru</a></div>
+        </div>
+
+    </body>
+</html>

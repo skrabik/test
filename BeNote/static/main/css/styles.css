@@ -1,0 +1,70 @@
+html, body {
+    font-family: 'arial';
+}
+
+.header {
+    background: green;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.notes {
+    float: left;
+    width: 20%;
+}
+
+.inner-notes {
+    background: green;
+    min-height: 600px;
+}
+
+.content {
+    float: left;
+    width: 80%;
+}
+
+.inner-content {
+    background: white;
+    margin-left: 10xp;
+    min-height: 600px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.footer {
+
+}
+
+.inner-footer {
+    background: green;
+    color: white;
+    margin-top: 10px;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+.logo {
+	background: url('../images/logo.png') no-repeat 10px 5px;
+	width: 70px;
+	height: 60px;
+}
+
+.note {
+    background: black;
+}
+
+.input_text {
+    background: black;
+}

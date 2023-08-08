@@ -1,0 +1,32 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+{% if request.user.is_authenticated %}
+
+    {% if content %}
+        <div class="basket-content">
+        {% for i in content %}
+        <a href="{% url 'check_trash_note' i.pk %}"><div class="note-block">
+            <h2 class="head-note">{{ i.title }}</h2>
+            <h4>{{ i.text }}</h4>
+        </div></a>
+        {% endfor %}
+        </div>
+        {% block button %}
+        <a href="{% url 'clear_basket' %}"><button class="bbutton">Очистить корзину</button></a>
+        {% endblock button %}
+
+    {% else %}
+
+        <div class="normal-text">Корзина пуста!</div>
+
+    {% endif %}
+
+{% else %}
+    <div class="normal-text">Пожалуйста, авторизируйтесь</div>
+{% endif %}
+
+{% endblock %}
+
+

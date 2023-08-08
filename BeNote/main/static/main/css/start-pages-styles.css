@@ -1,0 +1,152 @@
+.main {
+    display: flex;
+    justify-content: flex-start;
+    height: 400px;
+}
+
+#log-reg-form {
+    border-radius: 20px;
+    padding: 10px;
+    padding-left: 25px;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 0px;
+}
+
+
+.empty-block {
+    width: 35%;
+    height: 300px;
+}
+
+.up-empty-block {
+    height: 130px;
+}
+
+.main-block {
+    width: 30%;
+    background-color: #735CDD;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 1.0em;
+    position:relative;
+    padding-bottom:50px;
+}
+
+.button {
+    border-radius: 12px;
+    border-style: none;
+    margin-top: 5px;
+    background-color: white;
+    text-align: left;
+    height: 30px;
+    width: 100px;
+    text-align: center;
+}
+
+.button:hover {
+      background-color:#ccc6c6;
+      transition: 0.7s;
+ }
+
+.button:active {
+    background-color: #735CDD;
+}
+
+.form-field {
+    border-radius: 12px;
+    font-size: 1.2em;
+    width: 65%;
+    clear:both;
+    text-align:left;
+    text-align:left;
+    padding-left: 5px;
+}
+
+.form-field:focus {
+    outline: none !important;
+}
+
+
+.start-button {
+    border-radius: 12px;
+    border-style: none;
+    background-color: white;
+    text-align: left;
+    height: 50px;
+    width: 220px;
+    text-align: center;
+    font-size: 1.4em;
+    margin-top: 1px;
+}
+
+.start-button:hover {
+      background-color:#ccc6c6;
+      transition: 0.7s;
+ }
+
+.start-button:active {
+    background-color: #735CDD;
+}
+
+#main-logo{
+    object-fit: cover;
+    height: 120px;
+}
+
+.text-div {
+    margin-top: 4px;
+}
+
+#start-text-div {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 27px;
+}
+
+
+.login-form-label {
+    font-size: 1.2em;
+}
+
+.start-footer {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.login-button {
+    border-radius: 12px;
+    border-style: none;
+    background-color: white;
+    text-align: left;
+    height: 50px;
+    width: 220px;
+    text-align: center;
+    font-size: 1.4em;
+    margin-top: 30px;
+}
+
+.login-button:hover {
+      background-color:#ccc6c6;
+      transition: 0.7s;
+ }
+
+.login-button:active {
+    background-color: #735CDD;
+}
+
+.field {
+    clear:both;
+    text-align:right;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+
+label {float:left;}
+
+.helper {
+    float: left;
+}
